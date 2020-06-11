@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton prefWidth="97.0" />
+                  <JFXButton prefHeight="25.0" prefWidth="99.0" />
+                  <JFXButton prefHeight="25.0" prefWidth="99.0" />
+                  <JFXButton prefHeight="25.0" prefWidth="97.0" />
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </left>
+         <center>
+            <JFXTreeTableView BorderPane.alignment="CENTER">
+               <columns>
+                  <TreeTableColumn prefWidth="63.0" text="Código" />
+                  <TreeTableColumn prefWidth="192.0" text="Descrição" />
+                  <TreeTableColumn minWidth="0.0" prefWidth="99.0" text="Grupo" />
+                  <TreeTableColumn prefWidth="110.0" text="Valor" />
+               </columns>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin>
+            </JFXTreeTableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
