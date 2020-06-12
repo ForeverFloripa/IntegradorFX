@@ -9,10 +9,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "produto")
-public class Produto {
+public class Produto2 {
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Id
 	@Column
 	private String codigo;
 	private String descricao;
@@ -67,7 +67,7 @@ public class Produto {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Produto other = (Produto) obj;
+		Produto2 other = (Produto2) obj;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;
@@ -76,10 +76,10 @@ public class Produto {
 		return true;
 	}
 
-	public Produto() {
+	public Produto2() {
 	}
 
-	public Produto(String line) {
+	public Produto2(String line) {
 		if (null != line) {
 			String[] valores = line.split(";");
 			if (null != valores) {

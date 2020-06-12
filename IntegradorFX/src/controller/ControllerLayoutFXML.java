@@ -16,7 +16,6 @@ public class ControllerLayoutFXML {
 
 	@FXML
 	private void initialize() {
-		importa();
 		carregaDoBanco();
 		
 	}
@@ -37,6 +36,12 @@ public class ControllerLayoutFXML {
 	
 	private void importa() {
 		Recebe.importaTxtSalvaBanco();
+		
+	}
+
+	@FXML public void onConfirm() {
+		importa();
+		carregaDoBanco();
 		
 	}
 	

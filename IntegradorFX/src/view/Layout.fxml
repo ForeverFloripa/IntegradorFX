@@ -65,7 +65,7 @@
 			</BorderPane.margin>
 			<HBox GridPane.rowIndex="4" GridPane.columnIndex="0"
 				GridPane.columnSpan="2" spacing="10" alignment="CENTER_RIGHT">
-				<Button fx:id="btnConfirm" text="Importar Tabela de Produtos" />
+				<Button fx:id="btnConfirm" text="Importar Tabela de Produtos" onAction="#onConfirm" />
 			</HBox>
 
 

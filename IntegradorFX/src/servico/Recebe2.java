@@ -12,7 +12,7 @@ import model.Produto;
 
 //Operacoes com o arquivo de texto
 
-public class Recebe {
+public class Recebe2 {
 
 	public static final String SEPARADOR = ";";
 	public static final String ARQUIVO = "C:\\integracao\\recebe\\produtoslista.CSV";
@@ -42,7 +42,8 @@ public class Recebe {
 			if (null != linha && !"".equals(linha)) {
 				Produto produto = new Produto(linha);
 				list.add(produto);
-							
+				
+				
 				ProdutoController pc = new ProdutoController();
 				pc.salvar(produto);
  
@@ -51,8 +52,6 @@ public class Recebe {
 
 		return list;
 	} 
-	
-	
 
 	public static void lerArquivo() throws IOException {
 
