@@ -51,7 +51,7 @@ public class Recebe {
 		}
 
 		return list;
-	}
+	} 
 
 	public static void lerArquivo() throws IOException {
 
