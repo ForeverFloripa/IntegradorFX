@@ -9,6 +9,8 @@ import javax.persistence.Query;
 
 import model.Produto;
 
+//operacoes com o banco de dados
+
 public class ProdutoController {
 
 	EntityManagerFactory emf;

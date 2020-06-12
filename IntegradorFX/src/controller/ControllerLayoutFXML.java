@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 import model.Produto;
 import servico.ProdutoController;
+import servico.Recebe;
 
 public class ControllerLayoutFXML {
 	@FXML 
@@ -15,10 +16,8 @@ public class ControllerLayoutFXML {
 
 	@FXML
 	private void initialize() {
-		ProdutoController pc= new ProdutoController();
-		List<Produto> lista= pc.listar();
-		tableProd.setItems(FXCollections.observableArrayList(lista));
-		
+		importa();
+		carregaDoBanco();
 		
 	}
 
@@ -28,6 +27,18 @@ public class ControllerLayoutFXML {
 	}
 	
 	
+	private void carregaDoBanco() {
+		ProdutoController pc= new ProdutoController();
+		List<Produto> lista= pc.listar();
+		tableProd.setItems(FXCollections.observableArrayList(lista));
+		
+		
+	}
+	
+	private void importa() {
+		Recebe.importaTxtSalvaBanco();
+		
+	}
 	
 	
 	

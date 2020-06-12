@@ -10,29 +10,25 @@ import java.util.List;
 
 import model.Produto;
 
+//Operacoes com o arquivo de texto
+
 public class Recebe {
-	
-    public static final String SEPARADOR = ";";
-    public static final String ARQUIVO = "C:\\integracao\\recebe\\produtoslista.CSV";
 
-	public static void main(String[] args) throws IOException {
-			Produto produto = new Produto();
-			
-			//splitando();
+	public static final String SEPARADOR = ";";
+	public static final String ARQUIVO = "C:\\integracao\\recebe\\produtoslista.CSV";
+
+	public static void importaTxtSalvaBanco() {
+		Produto produto = new Produto();
 		try {
-
-            List<Produto> produtos = carregaProduto();
-
-            for(final Produto p : produtos){
-                System.out.println(p.getCodigo()+", "+p.getDescricao()+", "+p.getGrupo()+", "+p.getPreco());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-		
-		
+			List<Produto> produtos = carregaProduto();
+			//for (final Produto p : produtos) {
+				//System.out.println(p.getCodigo() + ", " + p.getDescricao() + ", " + p.getGrupo() + ", " + p.getPreco());
+		//	}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
+
 //
 	public static List<Produto> carregaProduto() throws IOException {
 		List<Produto> list = new ArrayList<Produto>(0);
@@ -42,23 +38,24 @@ public class Recebe {
 		while (linha != null) {
 			System.out.printf("%s\n", linha);
 			linha = lerArq.readLine();
-			
-			if(null != linha && !"".equals(linha) ){
+
+			if (null != linha && !"".equals(linha)) {
 				Produto produto = new Produto(linha);
 				list.add(produto);
-				ProdutoController pc= new ProdutoController();
-				pc.salvar(produto);
 				
+				
+				ProdutoController pc = new ProdutoController();
+				pc.salvar(produto);
+
 			}
 		}
 
 		return list;
 	}
 
-	
 	public static void lerArquivo() throws IOException {
 
-		System.out.println("Iniciando Importação");
+		System.out.println("Iniciando Importaï¿½ï¿½o");
 		String nomeArquivo = "C:\\integracao\\recebe\\produtoslista.CSV";
 		File arq = new File(nomeArquivo);
 
@@ -70,7 +67,7 @@ public class Recebe {
 			String s = null;
 			while ((s = br.readLine()) != null) {
 				System.out.println(s);
-				
+
 			}
 			br.close();
 		}
