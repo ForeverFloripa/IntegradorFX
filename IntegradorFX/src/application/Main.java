@@ -11,13 +11,22 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		Pane root = FXMLLoader.load(getClass().getResource("FXMLTela.fxml"));
-		Scene scene = new Scene(root,300,200);
-		primaryStage.setScene(scene);
-		primaryStage.show();
-		
-		
+		try {
+			Pane root = FXMLLoader.load(getClass().getResource("/view/Layout.fxml"));
+			Scene scene = new Scene(root,640,480);
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("Gerenciador de Senhas");
+			primaryStage.setMinWidth(600);
+			primaryStage.setMinHeight(400);
+			
+			
+			primaryStage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
+		
+	
 
 	public static void main(String[] args) {
 		launch(args);
