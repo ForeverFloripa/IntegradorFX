@@ -3,6 +3,7 @@ package model;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class ProdutoBDTBL {
 
@@ -40,5 +41,10 @@ public class ProdutoBDTBL {
 	public Float getPreco() {
 		return preco.get();
 	}
+	
+	public StringProperty descricaoProperty() {
+		return descricao;
+	}
+	
 
 }

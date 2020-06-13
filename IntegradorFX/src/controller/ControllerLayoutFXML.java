@@ -10,22 +10,20 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import model.ProdutoBDTBL;
 import servico.ProdutoController;
 import servico.RecebeDoArquivo;
-import javafx.scene.control.TextField;
 
 public class ControllerLayoutFXML {
 	@FXML 
 	private TableView<ProdutoBDTBL> tableProd;
-	@FXML Button btnAttTabela;
-	@FXML TextField txtTeste;
-	@FXML Button btnConfirm;
+	@FXML private Button btnConfirm;
 
 	@FXML
 	private void initialize() {
 		carregaDoBanco();
-
+				
 	}
 
 	@FXML 

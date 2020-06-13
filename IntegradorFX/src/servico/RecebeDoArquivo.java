@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +18,7 @@ public class RecebeDoArquivo {
 	public static final String ARQUIVO = "C:\\integracao\\recebe\\produtoslista.CSV";
 
 	public static void importaTxtSalvaBanco() {
+		pegaData();
 		Produto produto = new Produto();
 		try {
 			List<Produto> produtos = carregaProduto();
@@ -28,8 +29,8 @@ public class RecebeDoArquivo {
 			e.printStackTrace();
 		}
 	}
+	
 
-//
 	public static List<Produto> carregaProduto() throws IOException {
 		List<Produto> list = new ArrayList<Produto>(0);
 		FileReader arq = new FileReader(ARQUIVO);
@@ -54,9 +55,9 @@ public class RecebeDoArquivo {
 	
 	
 
-	public static void lerArquivo() throws IOException {
+	/*public static void lerArquivo() throws IOException {
 
-		System.out.println("Iniciando Importa��o");
+		System.out.println("Iniciando Importação");
 		String nomeArquivo = "C:\\integracao\\recebe\\produtoslista.CSV";
 		File arq = new File(nomeArquivo);
 
@@ -83,6 +84,20 @@ public class RecebeDoArquivo {
 			System.out.print(col + "  ");
 		}
 
+	}
+	*/
+	
+	public static void pegaData() {
+		File f1 = new File("C:\\integracao\\recebe\\produtoslista.CSV");
+		Long codigo = f1.lastModified();
+		
+		DateFormat df = DateFormat.getDateTimeInstance();
+        String data=df.format(codigo);
+        
+        System.out.println(" A data de modificacao do arquivo é: "+ data);
+        
+		
+		
 	}
 
 }
