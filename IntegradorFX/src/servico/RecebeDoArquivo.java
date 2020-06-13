@@ -12,7 +12,7 @@ import model.Produto;
 
 //Operacoes com o arquivo de texto
 
-public class Recebe {
+public class RecebeDoArquivo {
 
 	public static final String SEPARADOR = ";";
 	public static final String ARQUIVO = "C:\\integracao\\recebe\\produtoslista.CSV";
@@ -21,9 +21,9 @@ public class Recebe {
 		Produto produto = new Produto();
 		try {
 			List<Produto> produtos = carregaProduto();
-			//for (final Produto p : produtos) {
-				//System.out.println(p.getCodigo() + ", " + p.getDescricao() + ", " + p.getGrupo() + ", " + p.getPreco());
-		//	}
+			for (final Produto p : produtos) {
+				System.out.println(p.getCodigo() + ", " + p.getDescricao() + ", " + p.getGrupo() + ", " + p.getPreco());
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

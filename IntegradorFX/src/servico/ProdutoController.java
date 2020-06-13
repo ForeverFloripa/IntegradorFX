@@ -8,6 +8,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import model.Produto;
+import model.ProdutoBDTBL;
 
 //operacoes com o banco de dados
 
@@ -47,4 +48,12 @@ public class ProdutoController {
 
 	}
 
+	public List<ProdutoBDTBL> listarBD() {
+		em.getTransaction().begin();
+		Query consulta = em.createQuery("SELECT Produto FROM Produto produto");
+		List<ProdutoBDTBL> listaBD = consulta.getResultList();
+		em.getTransaction().commit();
+		emf.close();
+		return listaBD;
+	}
 }

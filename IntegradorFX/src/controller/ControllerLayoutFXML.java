@@ -1,23 +1,31 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
-import model.Produto;
+import model.ProdutoBDTBL;
 import servico.ProdutoController;
-import servico.Recebe;
+import servico.RecebeDoArquivo;
+import javafx.scene.control.TextField;
 
 public class ControllerLayoutFXML {
 	@FXML 
-	private TableView<Produto> tableProd;
+	private TableView<ProdutoBDTBL> tableProd;
+	@FXML Button btnAttTabela;
+	@FXML TextField txtTeste;
+	@FXML Button btnConfirm;
 
 	@FXML
 	private void initialize() {
 		carregaDoBanco();
-		
+
 	}
 
 	@FXML 
@@ -26,24 +34,31 @@ public class ControllerLayoutFXML {
 	}
 	
 	
+	
 	private void carregaDoBanco() {
 		ProdutoController pc= new ProdutoController();
-		List<Produto> lista= pc.listar();
-		tableProd.setItems(FXCollections.observableArrayList(lista));
-		
+		List<ProdutoBDTBL> listaBD = new ArrayList<ProdutoBDTBL>();
+		if(listaBD.isEmpty()) {
+			listaBD.clear();
+		}
+		listaBD= pc.listarBD();
+		tableProd.setItems(FXCollections.observableArrayList(listaBD));
 		
 	}
 	
 	private void importa() {
-		Recebe.importaTxtSalvaBanco();
+		RecebeDoArquivo.importaTxtSalvaBanco();
 		
 	}
 
 	@FXML public void onConfirm() {
 		importa();
 		carregaDoBanco();
+		tableProd.refresh();
+		
 		
 	}
+
 	
 	
 	
